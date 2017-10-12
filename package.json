@@ -1,12 +1,35 @@
 {
   "name": "ionicons-inline",
+  "description": "Inline version of Ionicons for Sass",
   "version": "1.0.0",
-  "main": "index.js",
-  "license": "MIT",
+  "author": "Rico Sta. Cruz <rico@ricostacruz.com> (http://ricostacruz.com)",
+  "bugs": {
+    "url": "https://github.com/rstacruz/ionicons-inline/issues"
+  },
   "devDependencies": {
     "dedent": "0.7.0",
     "glob": "7.1.2",
     "ionicons": "3.0.0",
     "meow": "3.7.0"
+  },
+  "files": [
+    "support",
+    "dist"
+  ],
+  "homepage": "https://github.com/rstacruz/ionicons-inline#readme",
+  "keywords": [
+    "icon",
+    "ionic",
+    "ionicons",
+    "sass"
+  ],
+  "license": "MIT",
+  "main": "index.js",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rstacruz/ionicons-inline.git"
+  },
+  "scripts": {
+    "test": "test -f dist/ionicons.scss"
   }
 }
