@@ -23,6 +23,8 @@ function convert ({ prefix, base, svg }) {
       @include ${prefix}-base;
       background-image: ${prefix}-${base}-image($color);
       background-size: $size $size;
+      height: $size;
+      width: $size;
     }
   `
 }
@@ -47,7 +49,7 @@ function header ({ prefix }) {
 }
 
 function process (svg) {
-  svg = svg.replace('</svg>', '<style>path{fill:__COLOR__;}</style>')
+  svg = svg.replace('</svg>', '<style>path{fill:__COLOR__;}</style></svg>')
   return encodeURIComponent(svg).replace('__COLOR__', '#{$color}')
 }
 
