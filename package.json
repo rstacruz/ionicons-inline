@@ -10,7 +10,9 @@
     "dedent": "0.7.0",
     "glob": "7.1.2",
     "ionicons": "3.0.0",
-    "meow": "3.7.0"
+    "jest": "21.2.1",
+    "meow": "3.7.0",
+    "node-sass": "4.5.3"
   },
   "files": [
     "support",

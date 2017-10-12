@@ -1,0 +1,6 @@
+@import '../../../dist/ionicons';
+
+div::before {
+  content: '';
+  @include ion-ios-add(32px, pink);
+}
