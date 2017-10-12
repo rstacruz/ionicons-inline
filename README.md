@@ -1,6 +1,6 @@
 # ionicons-inline
 
-> Inline version of Ionicons for Sass
+> Use Ionicons in Sass as inline SVG, no images or webfonts needed
 
 ionicons-inline lets you use [Ionicons] in your CSS without images or webfonts. It embeds the icons as embedded SVG's via data URI's. This is based on ionicons v3.0.0.
 

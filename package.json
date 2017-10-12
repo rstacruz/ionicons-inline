@@ -1,6 +1,6 @@
 {
   "name": "ionicons-inline",
-  "description": "Inline version of Ionicons for Sass",
+  "description": "Use Ionicons in Sass as inline SVG, no images or webfonts needed",
   "version": "1.0.0",
   "author": "Rico Sta. Cruz <rico@ricostacruz.com> (http://ricostacruz.com)",
   "bugs": {
