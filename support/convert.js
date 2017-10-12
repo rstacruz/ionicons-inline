@@ -21,14 +21,9 @@ function convert ({ prefix, base, svg }) {
       @return url(${JSON.stringify(data)});
     }
 
-    @mixin ${prefix}-${base}-image($size: 16px, $color: #000000) {
-      background-image: ${prefix}-${base}-image($color);
-    }
-
     @mixin ${prefix}-${base}($size: 16px, $color: #000000) {
       @include ${prefix}-base;
-      @include ${prefix}-${base}-image($size, $color);
-      background-size: $size $size;
+      background: ${prefix}-${base}-image($color) center center / $size $size no-repeat;
       height: $size;
       width: $size;
     }
@@ -47,7 +42,6 @@ function convert ({ prefix, base, svg }) {
 function header ({ prefix }) {
   return dedent`
     @mixin ${prefix}-base {
-      line-height: 1em;
       display: inline-block;
       vertical-align: middle;
       -webkit-font-smoothing: antialiased;
