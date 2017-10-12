@@ -2,7 +2,7 @@
 
 > Inline version of Ionicons for Sass
 
-ionicons-inline lets you use [Ionicons] in your CSS without images or webfonts. Unlike the default ionicons distribution, this lets you only bundle the icons you need.
+ionicons-inline lets you use [Ionicons] in your CSS without images or webfonts. It embeds the icons as embedded SVG's via data URI's. This is based on ionicons v3.0.0.
 
 [Ionicons]: https://ionicframework.com/docs/ionicons/
 
@@ -29,11 +29,15 @@ button::before {
 }
 ```
 
+## Why?
+
+Unlike the default ionicons distribution, this lets you only bundle the icons you need. You also don't need to load the 70kb+ ionicons package. This is great if you only need a few icons from the set.
+
 ## Usage
 
 Install it as an npm package. It's preferred you use `--exact`, because icons may change per version.
 
-```
+```sh
 npm install --save --save-exact ionicons-inline # via npm
 yarn add --exact ionicons-inline                # via yarn
 ```
@@ -53,6 +57,10 @@ button::after {
   @include ion-md-wifi(16px, #aaddff);
 }
 ```
+
+## Prior art
+
+- [iconfonts](https://github.com/rstacruz/iconfonts) also lets you selectively embed just a few CSS declarations. However, it still needs to load the 70kb+ ionicons file.
 
 ## Thanks
 
