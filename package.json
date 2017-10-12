@@ -30,6 +30,7 @@
     "url": "git+https://github.com/rstacruz/ionicons-inline.git"
   },
   "scripts": {
-    "test": "test -f dist/ionicons.scss"
+    "test": "test -f dist/ionicons.scss",
+    "prepublish": "make"
   }
 }
