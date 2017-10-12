@@ -1,7 +1,7 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`works 1`] = `
-"/*! ionicons-inline (https://github.com/rstacruz/ionicons-inline) */
+"/*! ionicons-inline v0.0.5 | MIT | https://github.com/rstacruz/ionicons-inline */
 div::before {
   content: '';
   line-height: 1em;

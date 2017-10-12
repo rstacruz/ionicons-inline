@@ -30,15 +30,17 @@ const cli = require('meow')(`
 })
 
 const glob = require('glob')
-const { basename } = require('path')
+const { basename, resolve } = require('path')
 const { convert, header } = require('./convert')
 const { readFileSync } = require('fs')
+const { getBanner } = require('./banner')
 
-function run ({ path, prefix }) {
+function run ({ src, prefix, pkg }) {
   const result = []
+  result.push(getBanner(pkg))
   result.push(header({ prefix }))
 
-  glob.sync(cli.flags.src).forEach(fname => {
+  glob.sync(src).forEach(fname => {
     const base = basename(fname).replace(/\.svg$/, '')
     const svg = readFileSync(fname, 'utf-8')
     const output = convert({ prefix, base, svg })
@@ -50,8 +52,8 @@ function run ({ path, prefix }) {
 }
 
 const result = run({
-  path: 'node_modules/ionicons/dist/svg/*.svg',
-  prefix: cli.flags.prefix
+  ...cli.flags,
+  pkg: resolve(process.cwd(), cli.flags.pkg || 'package.json')
 })
 
 console.log(result)
