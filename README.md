@@ -43,6 +43,8 @@ npm install --save --save-exact ionicons-inline # via npm
 yarn add --exact ionicons-inline                # via yarn
 ```
 
+##### Importing
+
 Import it in your CSS. The way to do this differs in a lot of ways, but in general, one of these ought to work.
 
 ```scss
@@ -51,6 +53,8 @@ Import it in your CSS. The way to do this differs in a lot of ways, but in gener
 @import '../node_modules/ionicons-inline/dist/ionicons';
 ```
 
+##### Mixin: ion-icon
+
 Just use a mixin named `ion-<iconname>`. See [Ionic framework icons](https://ionicframework.com/docs/ionicons/).
 
 ```scss
@@ -58,6 +62,8 @@ Just use a mixin named `ion-<iconname>`. See [Ionic framework icons](https://ion
   @include ion-md-wifi(16px, #aaddff);
 }
 ```
+
+##### Function: ion-icon-image
 
 This sets many properties (width, height, background-image, background-size, background-position, background-repeat, display, vertical-align). If you only want to set background-image, you can use:
 
