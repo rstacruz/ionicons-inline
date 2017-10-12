@@ -13,7 +13,7 @@ const dedent = require('dedent')
  */
 
 function convert ({ prefix, base, svg }) {
-  const data = process(svg)
+  const data = process(svg, { prefix })
   return dedent`
     @function ${prefix}-${base}-image($color: black) {
       @return url('data:image/svg+xml;utf8,${data}');
@@ -45,12 +45,16 @@ function header ({ prefix }) {
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
+
+    @function ${prefix}-fix-color($color) {
+      @return str-insert(str-slice(ie-hex-str($color), 4), "%23", 1)
+    }
   `
 }
 
-function process (svg) {
+function process (svg, { prefix }) {
   svg = svg.replace('</svg>', '<style>path{fill:__COLOR__;}</style></svg>')
-  return encodeURIComponent(svg).replace('__COLOR__', '#{$color}')
+  return encodeURIComponent(svg).replace('__COLOR__', '#{' + prefix + '-fix-color($color)}')
 }
 
 module.exports = { header, convert, process }

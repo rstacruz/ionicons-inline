@@ -10,6 +10,7 @@ ionicons-inline lets you use [Ionicons] in your CSS without images or webfonts. 
 
 ```scss
 button::before {
+  content: '';
   @include ion-md-wifi(16px, #aaddff);
 }
 ```
@@ -18,6 +19,7 @@ Returns:
 
 ```scss
 button::before {
+  content: '';
   line-height: 1em;
   display: inline-block;
   -webkit-font-smoothing: antialiased;
