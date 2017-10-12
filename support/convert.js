@@ -49,6 +49,7 @@ function header ({ prefix }) {
     @mixin ${prefix}-base {
       line-height: 1em;
       display: inline-block;
+      vertical-align: middle;
       -webkit-font-smoothing: antialiased;
       -moz-osx-font-smoothing: grayscale;
     }
