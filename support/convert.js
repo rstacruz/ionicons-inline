@@ -44,8 +44,6 @@ function header ({ prefix }) {
     @mixin ${prefix}-base {
       display: inline-block;
       vertical-align: middle;
-      -webkit-font-smoothing: antialiased;
-      -moz-osx-font-smoothing: grayscale;
     }
 
     @function ${prefix}-fix-color($color) {
