@@ -47,7 +47,7 @@ function header ({ prefix }) {
     }
 
     @function ${prefix}-fix-color($color) {
-      @return str-insert(str-slice(ie-hex-str($color), 4), "%23", 1)
+      @return unquote("rgb(#{red($color)}%2C#{green($color)}%2C#{blue($color)})")
     }
   `
 }
@@ -59,7 +59,7 @@ function header ({ prefix }) {
 
 function process (svg, { prefix }) {
   // Inject a <style> in the SVG document to allow changing colors
-  svg = svg.replace('</svg>', '<style>path{fill:__COLOR__;}</style></svg>')
+  svg = svg.replace(/<path /gi, '<path fill="__COLOR__" ')
 
   // Since this is a data: URI, we want to encode it with %23 and such
   svg = encodeURIComponent(svg)
@@ -67,7 +67,7 @@ function process (svg, { prefix }) {
   // We want the #{...} interpolation to be outside the URI encoding
   svg = svg.replace('__COLOR__', '#{' + prefix + '-fix-color($color)}')
 
-  svg = 'data:image/svg+xml;utf8,' + svg
+  svg = 'data:image/svg+xml;charset=utf-8,' + svg
 
   return svg
 }
