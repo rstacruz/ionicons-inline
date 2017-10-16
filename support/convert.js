@@ -65,7 +65,7 @@ function process (svg, { prefix }) {
   svg = encodeURIComponent(svg)
 
   // We want the #{...} interpolation to be outside the URI encoding
-  svg = svg.replace('__COLOR__', '#{' + prefix + '-fix-color($color)}')
+  svg = svg.replace(/__COLOR__/g, '#{' + prefix + '-fix-color($color)}')
 
   svg = 'data:image/svg+xml;charset=utf-8,' + svg
 

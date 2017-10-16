@@ -2,5 +2,5 @@
 
 div::before {
   content: '';
-  @include ion-ios-add(32px, pink);
+  @include ion-md-chatboxes(32px, pink);
 }

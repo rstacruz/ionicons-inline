@@ -2,23 +2,31 @@
 
 const exec = require('child_process').execFileSync
 const { readFileSync } = require('fs')
+const promisify = require('util').promisify
+const execFile = promisify(require('child_process').execFile)
+
+beforeAll(() => {
+  return execFile('npm', ['run', 'prepare'])
+})
 
 it('works', () => {
-  const result = exec(
+  return execFile(
     './node_modules/.bin/node-sass',
     [ 'test/fixtures/simple/div.scss' ]
   )
+  .then(result => {
+    const { stdout } = result
 
-  const css = result.toString()
-
-  expect(css).toContain(`background: url("data:image/svg+xml;`)
-  expect(css).toContain(`rgb(255%2C192%2C203)`)
-  expect(css).toContain(`height: 32px;`)
-  expect(css).toContain(`width: 32px;`)
-  expect(css).toContain(`vertical-align: middle;`)
-  expect(css).toContain(`div::before`)
-  expect(css).toContain(`ionicons-inline`)
-  expect(css).toContain(`MIT`)
+    expect(stdout).toContain(`background: url("data:image/svg+xml;`)
+    expect(stdout).toContain(`rgb(255%2C192%2C203)`)
+    expect(stdout.split(`rgb(255%2C192%2C203)`).length).toEqual(3)
+    expect(stdout).toContain(`height: 32px;`)
+    expect(stdout).toContain(`width: 32px;`)
+    expect(stdout).toContain(`vertical-align: middle;`)
+    expect(stdout).toContain(`div::before`)
+    expect(stdout).toContain(`ionicons-inline`)
+    expect(stdout).toContain(`MIT`)
+  })
 })
 
 it('has an output', () => {
