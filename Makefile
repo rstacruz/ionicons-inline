@@ -1,4 +1,4 @@
-update: dist/ionicons.scss
+prepare: dist/ionicons.scss
 
 dist/ionicons.scss:
 	mkdir -p dist
