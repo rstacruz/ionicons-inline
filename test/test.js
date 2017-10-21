@@ -25,6 +25,8 @@ it('works', () => {
     expect(stdout).toContain(`vertical-align: middle;`)
     expect(stdout).toContain(`div::before`)
     expect(stdout).toContain(`ionicons-inline`)
+    expect(stdout).toContain(`circle%20fill`)
+    expect(stdout).toContain(`path%20fill`)
     expect(stdout).toContain(`MIT`)
   })
 })

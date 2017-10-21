@@ -59,7 +59,7 @@ function header ({ prefix }) {
 
 function process (svg, { prefix }) {
   // Inject a <style> in the SVG document to allow changing colors
-  svg = svg.replace(/<path /gi, '<path fill="__COLOR__" ')
+  svg = svg.replace(/<(path|circle) /gi, (_, tag) => `<${tag} fill="__COLOR__" `)
 
   // Since this is a data: URI, we want to encode it with %23 and such
   svg = encodeURIComponent(svg)
