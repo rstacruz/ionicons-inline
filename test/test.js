@@ -10,11 +10,9 @@ beforeAll(() => {
 })
 
 it('works', () => {
-  return execFile(
-    './node_modules/.bin/node-sass',
-    [ 'test/fixtures/simple/div.scss' ]
-  )
-  .then(result => {
+  return execFile('./node_modules/.bin/node-sass', [
+    'test/fixtures/simple/div.scss'
+  ]).then(result => {
     const { stdout } = result
 
     expect(stdout).toContain(`background: url("data:image/svg+xml;`)
@@ -25,8 +23,7 @@ it('works', () => {
     expect(stdout).toContain(`vertical-align: middle;`)
     expect(stdout).toContain(`div::before`)
     expect(stdout).toContain(`ionicons-inline`)
-    expect(stdout).toContain(`circle%20fill`)
-    expect(stdout).toContain(`path%20fill`)
+    expect(stdout).toContain(`path`)
     expect(stdout).toContain(`MIT`)
   })
 })
