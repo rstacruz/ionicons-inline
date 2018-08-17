@@ -9,10 +9,10 @@
   "devDependencies": {
     "dedent": "0.7.0",
     "glob": "7.1.2",
-    "ionicons": "3.0.0",
-    "jest": "21.2.1",
-    "meow": "3.7.0",
-    "node-sass": "4.9.2"
+    "ionicons": "4.3.0",
+    "jest": "23.5.0",
+    "meow": "5.0.0",
+    "node-sass": "4.9.3"
   },
   "files": [
     "support",
