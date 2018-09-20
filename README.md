@@ -4,7 +4,9 @@
 
 ionicons-inline lets you use [Ionicons] in your CSS without images or webfonts. It embeds the icons as embedded SVG's via data URI's. This is based on ionicons v4.3.0.
 
-[ionicons]: https://ionicframework.com/docs/ionicons/
+[ionicons]: https://ionicons.com/
+
+<!-- [ionicons]: https://ionicframework.com/docs/ionicons/ -->
 
 ## Example
 
