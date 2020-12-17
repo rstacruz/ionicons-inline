@@ -9,7 +9,7 @@
   "devDependencies": {
     "dedent": "0.7.0",
     "glob": "7.1.2",
-    "ionicons": "4.3.0",
+    "ionicons": "5.2.3",
     "jest": "23.5.0",
     "meow": "5.0.0",
     "node-sass": "4.9.3"

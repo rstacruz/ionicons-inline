@@ -2,7 +2,7 @@
 
 > Use Ionicons in Sass as inline SVG, no images or webfonts needed
 
-ionicons-inline lets you use [Ionicons] in your CSS without images or webfonts. It embeds the icons as embedded SVG's via data URI's. This is based on ionicons v4.3.0.
+ionicons-inline lets you use [Ionicons] in your CSS without images or webfonts. It embeds the icons as embedded SVG's via data URI's. This is based on ionicons v5.2.3.
 
 [ionicons]: https://ionicons.com/
 
@@ -13,7 +13,7 @@ ionicons-inline lets you use [Ionicons] in your CSS without images or webfonts. 
 ```scss
 button::before {
   content: '';
-  @include ion-md-wifi(16px, #aaddff);
+  @include ion-add-outline(16px, #aaddff);
 }
 ```
 
@@ -60,7 +60,7 @@ Just use a mixin named `ion-<iconname>`. See [Ionic framework icons](https://ion
 
 ```scss
 .icon {
-  @include ion-md-wifi(16px, #aaddff);
+  @include ion-add-outline(16px, #aaddff);
 }
 ```
 
@@ -70,7 +70,7 @@ This sets many properties (width, height, background-image, background-size, bac
 
 ```scss
 .icon {
-  background-image: ion-md-wifi-image(16px, #aaddff);
+  background-image: ion-add-outline-image(16px, #aaddff);
 }
 ```
 

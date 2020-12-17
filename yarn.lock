@@ -1413,9 +1413,10 @@ invert-kv@^1.0.0:
   version "1.0.0"
   resolved "https://registry.yarnpkg.com/invert-kv/-/invert-kv-1.0.0.tgz#104a8e4aaca6d3d8cd157a8ef8bfab2d7a3ffdb6"
 
-ionicons@4.3.0:
-  version "4.3.0"
-  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-4.3.0.tgz#89a7060e6bde412275a7083a029e010b66da897d"
+ionicons@5.2.3:
+  version "5.2.3"
+  resolved "https://registry.yarnpkg.com/ionicons/-/ionicons-5.2.3.tgz#af4018ea7585b1e9ae11757731c77f2f36e0c7ac"
+  integrity sha512-87qtgBkieKVFagwYA9Cf91B3PCahQbEOMwMt8bSvlQSgflZ4eE5qI4MGj2ZlIyadeX0dgo+0CzZsy3ow0CsBAg==
 
 is-accessor-descriptor@^0.1.6:
   version "0.1.6"
