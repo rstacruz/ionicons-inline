@@ -1,5 +1,6 @@
 #!/usr/bin/env node
-const cli = require('meow')(`
+const cli = require('meow')(
+  `
   Usage:
    $ svg-icons-to-scss \
        --prefix PRE \
@@ -13,21 +14,16 @@ const cli = require('meow')(`
   Options:
     -h, --help            show usage information
     -v, --version         print version info and exit
-`, {
-  boolean: [
-    'help',
-    'version'
-  ],
-  string: [
-    'prefix',
-    'src',
-    'header'
-  ],
-  alias: {
-    h: 'help',
-    v: 'version'
+`,
+  {
+    boolean: ['help', 'version'],
+    string: ['prefix', 'src', 'header'],
+    alias: {
+      h: 'help',
+      v: 'version',
+    },
   }
-})
+)
 
 const glob = require('glob')
 const { basename, resolve } = require('path')
@@ -35,12 +31,12 @@ const { convert, header } = require('./convert')
 const { readFileSync } = require('fs')
 const { getBanner } = require('./banner')
 
-function run ({ src, prefix, pkg }) {
+function run({ src, prefix, pkg }) {
   const result = []
   result.push(getBanner(pkg))
   result.push(header({ prefix }))
 
-  glob.sync(src).forEach(fname => {
+  glob.sync(src).forEach((fname) => {
     const base = basename(fname).replace(/\.svg$/, '')
     const svg = readFileSync(fname, 'utf-8')
     const output = convert({ prefix, base, svg })
@@ -53,7 +49,7 @@ function run ({ src, prefix, pkg }) {
 
 const result = run({
   ...cli.flags,
-  pkg: resolve(process.cwd(), cli.flags.pkg || 'package.json')
+  pkg: resolve(process.cwd(), cli.flags.pkg || 'package.json'),
 })
 
 console.log(result)

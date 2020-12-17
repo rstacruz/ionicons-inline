@@ -13,7 +13,7 @@ const dedent = require('dedent')
  *     })
  */
 
-function convert ({ prefix, base, svg }) {
+function convert({ prefix, base, svg }) {
   const data = process(svg, { prefix })
 
   return dedent`
@@ -39,7 +39,7 @@ function convert ({ prefix, base, svg }) {
  *      header({ prefix: 'ion' })
  */
 
-function header ({ prefix }) {
+function header({ prefix }) {
   return dedent`
     @mixin ${prefix}-base {
       display: inline-block;
@@ -57,9 +57,12 @@ function header ({ prefix }) {
  * @private
  */
 
-function process (svg, { prefix }) {
+function process(svg, { prefix }) {
   // Inject a <style> in the SVG document to allow changing colors
-  svg = svg.replace(/<(path|circle) /gi, (_, tag) => `<${tag} fill="__COLOR__" `)
+  svg = svg.replace(
+    /<(path|circle) /gi,
+    (_, tag) => `<${tag} fill="__COLOR__" `
+  )
 
   // Since this is a data: URI, we want to encode it with %23 and such
   svg = encodeURIComponent(svg)

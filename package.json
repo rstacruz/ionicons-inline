@@ -11,7 +11,8 @@
     "glob": "7.1.6",
     "ionicons": "5.2.3",
     "jest": "26.6.3",
-    "meow": "8.0.0"
+    "meow": "8.0.0",
+    "prettier": "^2.2.1"
   },
   "files": [
     "support",
@@ -32,7 +33,9 @@
   },
   "scripts": {
     "test": "jest",
-    "prepare": "make -B"
+    "prepare": "make -B",
+    "prettier:check": "prettier --check support test",
+    "prettier:fix": "prettier --check support test"
   },
   "dependencies": {
     "sass": "^1.30.0"
