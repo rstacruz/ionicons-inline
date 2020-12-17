@@ -8,11 +8,10 @@
   },
   "devDependencies": {
     "dedent": "0.7.0",
-    "glob": "7.1.2",
+    "glob": "7.1.6",
     "ionicons": "5.2.3",
-    "jest": "23.5.0",
-    "meow": "5.0.0",
-    "node-sass": "4.9.3"
+    "jest": "26.6.3",
+    "meow": "8.0.0"
   },
   "files": [
     "support",
@@ -34,5 +33,8 @@
   "scripts": {
     "test": "jest",
     "prepare": "make -B"
+  },
+  "dependencies": {
+    "sass": "^1.30.0"
   }
 }
