@@ -30,6 +30,6 @@ it('works', () => {
 
 it('has an output', () => {
   const scss = readFileSync('dist/ionicons.scss', 'utf-8')
-  expect(scss).toContain('ion-ios-add')
+  expect(scss).toContain('ion-add-outline')
   expect(scss).toContain('data:image/svg+xml;charset=utf-8,')
 })
