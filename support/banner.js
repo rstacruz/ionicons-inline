@@ -6,7 +6,7 @@
  *     getBanner('./package.json')
  */
 
-function getBanner (packagePath) {
+function getBanner(packagePath) {
   // Read package.json
   const pkg = require(packagePath)
   const { name, version, license } = pkg
